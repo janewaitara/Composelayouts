@@ -13,30 +13,35 @@ private val Helvetica = FontFamily(
     Font(R.font.helvetica_neue_medium, FontWeight.Medium),
     Font(R.font.helvetica_neue_bold, FontWeight.Bold),
 )
+private val spotifyText = FontFamily(
+    Font(R.font.circular_spotify_text_light, FontWeight.Light),
+    Font(R.font.circular_spotify_text_medium, FontWeight.Medium),
+    Font(R.font.circular_spotify_text_bold, FontWeight.Bold),
+)
 
 // Set of Material typography styles to start with
 val Typography = Typography(
     bodyLarge = TextStyle(
-        fontFamily = Helvetica,
+        fontFamily = spotifyText,
         fontWeight = FontWeight.Medium,
         fontSize = 14.sp,
         lineHeight = 20.sp,
     ),
     bodyMedium = TextStyle(
-        fontFamily = Helvetica,
+        fontFamily = spotifyText,
         fontWeight = FontWeight.Light,
         fontSize = 14.sp,
         lineHeight = 20.sp,
     ),
     bodySmall = TextStyle(
-        fontFamily = Helvetica,
+        fontFamily = spotifyText,
         fontWeight = FontWeight.Light,
         fontSize = 12.sp,
         lineHeight = 16.sp,
     ),
     //Smallest text
     labelSmall = TextStyle(
-        fontFamily = Helvetica,
+        fontFamily = spotifyText,
         fontWeight = FontWeight.Light,
         fontSize = 10.sp,
         lineHeight = 12.sp,
