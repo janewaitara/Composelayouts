@@ -21,6 +21,12 @@ private val spotifyText = FontFamily(
 
 // Set of Material typography styles to start with
 val Typography = Typography(
+    titleSmall = TextStyle(
+        fontFamily = spotifyText,
+        fontWeight = FontWeight.Medium,
+        fontSize = 20.sp,
+        lineHeight = 24.sp,
+    ),
     bodyLarge = TextStyle(
         fontFamily = spotifyText,
         fontWeight = FontWeight.Medium,
