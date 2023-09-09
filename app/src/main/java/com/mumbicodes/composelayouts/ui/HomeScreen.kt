@@ -2,6 +2,8 @@ package com.mumbicodes.composelayouts.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -29,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import com.mumbicodes.composelayouts.R
 import com.mumbicodes.composelayouts.model.Podcast
 import com.mumbicodes.composelayouts.model.podcasts
+import com.mumbicodes.composelayouts.ui.components.Badge
 import com.mumbicodes.composelayouts.ui.components.HorizontalEpisode
 import com.mumbicodes.composelayouts.ui.components.PodcastSection
 import com.mumbicodes.composelayouts.ui.components.Show
@@ -44,6 +47,7 @@ fun HomeScreen(
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         TopSection()
+        Categories(categories = podcasts.map { it.category })
         Shows(podcasts = podcasts)
         Episodes(episodes = podcasts)
     }
@@ -95,6 +99,31 @@ fun TopSection(
         )
     }
 }
+
+/**
+ * Flow row -
+ * is a layout that fills items from left to right (ltr) in LTR layouts or right to left (rtl)
+ * in RTL layouts and when it runs out of space, moves to the next "row" or "line" positioned on
+ * the bottom, and then continues filling items until the items run out..
+ * */
+@OptIn(ExperimentalLayoutApi::class)
+@Preview
+@Composable
+fun Categories(
+    modifier: Modifier = Modifier,
+    categories: List<String> = listOf("Category 1", "category 2"),
+) {
+    FlowRow(
+        modifier = Modifier.padding(horizontal = 16.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        categories.forEach { category ->
+            Badge(modifier = Modifier, contentType = category)
+        }
+    }
+}
+
 /**
  * Lazy Row : The horizontally scrolling list that only composes and lays out the currently visible items*/
 @Composable
