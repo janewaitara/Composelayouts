@@ -8,10 +8,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -32,6 +34,7 @@ fun SearchCategories(
         modifier = modifier
             .size(160.dp, height = 136.dp)
             .background(color = categoryColors.random())
+            .clip(MaterialTheme.shapes.small)
     ) {
         Text(
             modifier = Modifier
@@ -47,7 +50,7 @@ fun SearchCategories(
             modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .rotate(32f)
-                .offset((16).dp),
+                .offset((24).dp),
             shape = MaterialTheme.shapes.small
         ) {
 
@@ -66,6 +69,10 @@ fun SearchCategories(
 @Composable
 fun searchCategoryPreview() {
     ComposelayoutsTheme {
-        SearchCategories(podcast = podcasts.first())
+        Scaffold { paddingValues ->
+            SearchCategories(
+                modifier = Modifier.padding(paddingValues),
+                podcast = podcasts.first())
+        }
     }
 }
