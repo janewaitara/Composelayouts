@@ -20,10 +20,10 @@ fun PodcastSection(
     content: @Composable () -> Unit,
 ) {
     Column(
-        modifier = modifier,
+        modifier = Modifier,
     ) {
         Text(
-            modifier = Modifier,
+            modifier = modifier,
             text = sectionHeader,
             color = MaterialTheme.colorScheme.onPrimary,
             style = MaterialTheme.typography.titleSmall,
@@ -33,7 +33,5 @@ fun PodcastSection(
         Spacer(modifier = Modifier.height(12.dp))
 
         content()
-
     }
-
 }
