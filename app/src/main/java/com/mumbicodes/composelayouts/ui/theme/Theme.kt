@@ -12,9 +12,10 @@ import androidx.core.view.WindowCompat
 
 private val DarkColorScheme = darkColorScheme(
     primary = spotifyGreen,
-    background = GreyDark,
-    onBackground = GreyLight,
-    onPrimary = GreyNeutral
+    background = GreyDarker,
+    onBackground = GreyNeutral,
+    onPrimary = GreyLight,
+    surface = GreyDark
 )
 
 @Composable
@@ -39,6 +40,7 @@ fun ComposelayoutsTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
+        shapes = Shapes,
         content = content
     )
 }
