@@ -24,32 +24,32 @@ val Typography = Typography(
     titleSmall = TextStyle(
         fontFamily = spotifyText,
         fontWeight = FontWeight.Medium,
-        fontSize = 20.sp,
-        lineHeight = 24.sp,
+        fontSize = 24.sp,
+        lineHeight = 28.sp,
     ),
     bodyLarge = TextStyle(
         fontFamily = spotifyText,
         fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
-        lineHeight = 20.sp,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
     ),
     bodyMedium = TextStyle(
         fontFamily = spotifyText,
         fontWeight = FontWeight.Light,
-        fontSize = 14.sp,
-        lineHeight = 20.sp,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
     ),
     bodySmall = TextStyle(
         fontFamily = spotifyText,
         fontWeight = FontWeight.Light,
-        fontSize = 12.sp,
-        lineHeight = 16.sp,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
     ),
     //Smallest text
     labelSmall = TextStyle(
         fontFamily = spotifyText,
         fontWeight = FontWeight.Light,
-        fontSize = 10.sp,
-        lineHeight = 12.sp,
+        fontSize = 12.sp,
+        lineHeight = 14.sp,
     )
 )

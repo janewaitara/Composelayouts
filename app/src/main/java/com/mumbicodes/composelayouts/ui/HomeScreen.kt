@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -15,8 +16,11 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -35,6 +39,7 @@ import com.mumbicodes.composelayouts.ui.components.Badge
 import com.mumbicodes.composelayouts.ui.components.HorizontalEpisode
 import com.mumbicodes.composelayouts.ui.components.PodcastSection
 import com.mumbicodes.composelayouts.ui.components.Show
+import com.mumbicodes.composelayouts.ui.theme.ComposelayoutsTheme
 
 @Composable
 fun HomeScreen(
@@ -43,8 +48,10 @@ fun HomeScreen(
     val podcasts by remember { mutableStateOf(podcasts) }
 
     Column(
-        modifier = modifier,
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        modifier = modifier
+            .padding(vertical = 48.dp)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
         TopSection()
         Categories(categories = podcasts.map { it.category })
@@ -53,7 +60,6 @@ fun HomeScreen(
     }
 }
 
-@Preview
 @Composable
 fun TopSection(
     modifier: Modifier = Modifier,
@@ -107,19 +113,24 @@ fun TopSection(
  * the bottom, and then continues filling items until the items run out..
  * */
 @OptIn(ExperimentalLayoutApi::class)
-@Preview
 @Composable
 fun Categories(
     modifier: Modifier = Modifier,
     categories: List<String> = listOf("Category 1", "category 2"),
 ) {
     FlowRow(
-        modifier = Modifier.padding(horizontal = 16.dp),
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 4.dp),
+        horizontalArrangement = Arrangement.spacedBy(4.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        maxItemsInEachRow = 3
     ) {
         categories.forEach { category ->
-            Badge(modifier = Modifier, contentType = category)
+            Badge(
+                modifier = Modifier.weight(1f),
+                contentType = category
+            )
         }
     }
 }
@@ -148,8 +159,8 @@ fun Shows(
 }
 
 /**
- * Lazy horizontal grid layout - It composes only visible columns of the grid.*/
-@Preview
+ * Lazy horizontal grid layout - It composes only visible columns of the grid.
+ * */
 @Composable
 fun Episodes(
     modifier: Modifier = Modifier,
@@ -169,6 +180,19 @@ fun Episodes(
             items(episodes) { podcast ->
                 HorizontalEpisode(podcast = podcast)
             }
+        }
+    }
+}
+
+@Preview(widthDp = 375, heightDp = 812)
+@Composable
+fun HomeScreenPreview() {
+    ComposelayoutsTheme {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            HomeScreen()
         }
     }
 }
