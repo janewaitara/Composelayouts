@@ -49,14 +49,14 @@ fun SearchCategories(
         Card(
             modifier = Modifier
                 .align(Alignment.BottomEnd)
-                .rotate(32f)
-                .offset((24).dp),
+                .rotate(28f)
+                .offset((36).dp),
             shape = MaterialTheme.shapes.small
         ) {
 
             Image(
                 modifier = Modifier
-                    .size(80.dp),
+                    .size(96.dp),
                 painter = painterResource(id = podcast.image),
                 contentDescription = "${podcast.podcastTitle} banner",
                 contentScale = ContentScale.Crop
@@ -72,7 +72,8 @@ fun searchCategoryPreview() {
         Scaffold { paddingValues ->
             SearchCategories(
                 modifier = Modifier.padding(paddingValues),
-                podcast = podcasts.first())
+                podcast = podcasts.first()
+            )
         }
     }
 }
