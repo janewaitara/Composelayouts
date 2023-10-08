@@ -6,10 +6,9 @@ The repository was used to show the different compose layouts in a WWCode sessio
 
 ## Screenshots
 
-Box | Row | Column | ConstraintLayout
---- | --- | --- | --- |
- <img width="296" alt="Screenshot 2023-10-08 at 23 46 06" src="https://github.com/janewaitara/Composelayouts/assets/32500878/12c22d1a-d97a-405d-aac4-cda0d31f55c8"> | <img width="375" alt="Screenshot 2023-10-08 at 23 46 53" src="https://github.com/janewaitara/Composelayouts/assets/32500878/b137bd13-e9b4-4f94-9e46-07426fb188d3"> | <img width="286" alt="Screenshot 2023-10-09 at 00 18 46" src="https://github.com/janewaitara/Composelayouts/assets/32500878/d7df4594-a3b0-4d92-becd-22b92cd1eace"> | <img width="467" alt="Screenshot 2023-10-08 at 23 35 07" src="https://github.com/janewaitara/Composelayouts/assets/32500878/a7464ecf-f876-4360-b6ff-f0a5d5f517bd">
-
+Box | Row | Column 
+--- | --- | --- 
+ <img width="296" alt="Screenshot 2023-10-08 at 23 46 06" src="https://github.com/janewaitara/Composelayouts/assets/32500878/12c22d1a-d97a-405d-aac4-cda0d31f55c8"> | <img width="375" alt="Screenshot 2023-10-08 at 23 46 53" src="https://github.com/janewaitara/Composelayouts/assets/32500878/b137bd13-e9b4-4f94-9e46-07426fb188d3"> | <img width="286" alt="Screenshot 2023-10-09 at 00 18 46" src="https://github.com/janewaitara/Composelayouts/assets/32500878/d7df4594-a3b0-4d92-becd-22b92cd1eace"> 
  
 <br />
 
